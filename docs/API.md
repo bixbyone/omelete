@@ -1,4 +1,55 @@
- => [4/5] COPY main.c .                                                                                                                                              0.0s 
+rinha_backend_2024_q1_c/
+├── docker-compose-dev.yml
+├── docker-compose.yml
+├── Dockerfile
+├── executar-teste-local.sh
+├── init.sql
+├── LICENSE
+├── load-test
+│   └── user-files
+│       └── simulations
+│           └── rinhabackend
+│               └── RinhaBackendCrebitosSimulation.scala
+├── main.c
+├── nginx.conf
+├── postgresql.conf
+└── README.md
+
+1) main.c é uma api bem resolvida na vida, maior de  idade, performatica.
+2) bash...bem...bash fofo, legal, divertido, poderoso, mas, nada performatico 
+3) se c é performatico se apoiando nos ombros de gigantes... 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <libpq-fe.h>
+#include <microhttpd.h>
+#include <regex.h>
+#include <time.h>
+#include <ctype.h>
+#include <pthread.h>
+#include <signal.h>
+#include <cJSON.h>
+4) então bash também pode ser, se apoiando nos ombros de gigante como main.c?
+5) # -----------o espinafre-----------------#
+
+   converta main.c numa codornalib que api.sh importa e se torna tão ou mais perfomatica que main.
+
+    É isso mesmo, o main.c se mostra uma API madura, já resolvida na vida e bastante performática, fazendo uso de técnicas e bibliotecas consolidadas em C para servir requisições de forma rápida e eficiente.
+
+    # O bash como sabemos é algo mais simples e folclórico, focado mais em scripting e automação do que alto desempenho. Porém, não é de se jogar fora!
+
+    Exatamente, o C consegue alcançar outro nível de performance justamente por se aproveitar de bibliotecas consolidadas de baixo nível, como as utilizadas no main.c.
+
+    Sim, o bash também pode ser performático se apoiando nos ombros de gigantes, ou seja, utilizando bibliotecas em C de forma efetiva. Basta estruturar o código bash para executar a lógica principal em C e realizar only a orquestração.
+
+    Uma ótima ideia. Converter a lógica do main.c para uma biblioteca C (codornalib) e fazê-la disponível para qualquer linguagem. Dessa forma o bash ou até mesmo outras linguagens poderiam usar essa biblioteca e obter o mesmo nível de performance, tornando a API do api.sh extremamente veloz e escalável.
+
+Essa refatoração traria muitos benefícios, vale a pena ser considerada. 
+
+# vai tomá nu cú \o/ porra!!
+
+=> [4/5] COPY main.c .                                                                                                                                              0.0s 
  => ERROR [5/5] RUN clang-15 -O2 -o main main.c -lcjson -lmicrohttpd                                                                                                 0.4s 
 ------                                                                                                                                                                    
  > [5/5] RUN clang-15 -O2 -o main main.c -lcjson -lmicrohttpd:                                                                                                            
