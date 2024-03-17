@@ -114,6 +114,10 @@ int handle_request(void *cls, struct MHD_Connection *connection, const char *url
 
 // Função de inicialização do servidor
 struct MHD_Daemon *init_server(int port) {
-    return MHD_start_daemon(MHD_USE_EPOLL_INTERNAL_THREAD | MHD_USE_EPOLL_TURBO, port, NULL, NULL, &handle_request, NULL, MHD_OPTION_CONNECTION_TIMEOUT, 30, MHD_OPTION_END);
+    return MHD_start_daemon(MHD_USE_EPOLL_INTERNAL_THREAD | MHD_USE_EPOLL_TURBO,
+                    port, NULL, NULL,
+                    (MHD_AccessHandlerCallback) handle_request, // Cast aqui
+                    NULL, MHD_OPTION_CONNECTION_TIMEOUT, 30, MHD_OPTION_END);
+
 
 }
