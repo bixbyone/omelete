@@ -46,7 +46,7 @@ MAX_WORKERS=100
 while [[ "$#" -gt 0 ]]; do
 
   # processa requisição em background
-  bash processa.sh "$1" &
+   bash "$(dirname "$0")/scripts/processa.sh" "$1" &
 
   # aguardaWorker 
   shift
