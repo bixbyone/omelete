@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Carrega a biblioteca C
-. ./libcodorna.so
-
 # Socket do Nginx
 ngx_socket=/tmp/nginx_proxy.socket
 
@@ -20,17 +17,20 @@ while socat -u UNIX-LISTEN:$ngx_socket,fork STDOUT; do
   case $method in
 
     GET)
-
+      # Extrai o ID do cliente da URL
+      id=$(echo "$url" | awk -F'/' '{print $3}')
+      
       # Chama função C para GET
-      response=$(get_cliente "${url}")
-
+      response=$(get_cliente "$id")
     ;;
 
     POST)
-
+      # Extrai o ID do cliente e o saldo do corpo da requisição
+      id=$(echo "$url" | awk -F'/' '{print $3}')
+      body=$(echo "$request" | tail -n 1)
+      
       # Chama função C para POST 
-      response=$(salva_cliente "${url}" "${body}")
-
+      response=$(salva_cliente "$id" "$body")
     ;;
 
   esac
