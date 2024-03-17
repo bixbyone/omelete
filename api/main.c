@@ -108,7 +108,7 @@ int handle_request(void *cls, struct MHD_Connection *connection, const char *url
         struct MHD_Response *http_response = MHD_create_response_from_buffer(strlen(response), (void *)response, MHD_RESPMEM_MUST_COPY);
         int ret = MHD_queue_response(connection, MHD_HTTP_METHOD_NOT_ALLOWED, http_response);
         MHD_destroy_response(http_response);
-        return ret;
+        return ret; 
     }
 }
 
