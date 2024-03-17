@@ -1,11 +1,48 @@
+version: '3'
+
 services:
-
   api:
-    build: api
-    ports: 8080
+    build: ./api
+    ports:
+      - "9999:80"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 300M
 
-  nginx: 
-    image: nginx
-    ports: 80
+  gatling1:
+    image: denvazh/gatling
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./load-test:/opt/gatling/user-files
+    command: "-s RinhaBackendCrebitosSimulation"
+    environment:
+      GATLING_SIMULATION_PACKAGE: "rinha-backend-crebitos"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 200M
+
+  gatling2:
+    image: denvazh/gatling
+    volumes:
+      - ./load-test:/opt/gatling/user-files
+    command: "-s RinhaBackendCrebitosSimulation"
+    environment:
+      GATLING_SIMULATION_PACKAGE: "rinha-backend-crebitos"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 200M
+
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 50M
