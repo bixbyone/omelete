@@ -1,19 +1,19 @@
 rinha_backend_2024_q1_c/
-├── docker-compose-dev.yml
-├── docker-compose.yml
-├── Dockerfile
-├── executar-teste-local.sh
-├── init.sql
-├── LICENSE
-├── load-test
-│   └── user-files
-│       └── simulations
-│           └── rinhabackend
-│               └── RinhaBackendCrebitosSimulation.scala
-├── main.c
-├── nginx.conf
-├── postgresql.conf
-└── README.md
+         ├── docker-compose-dev.yml
+         ├── docker-compose.yml
+         ├── Dockerfile
+         ├── executar-teste-local.sh
+         ├── init.sql
+         ├── LICENSE
+         ├── load-test
+         │   └── user-files
+         │       └── simulations
+         │           └── rinhabackend
+         │               └── RinhaBackendCrebitosSimulation.scala
+         ├── main.c
+         ├── nginx.conf
+         ├── postgresql.conf
+         └── README.md
 
 1) main.c é uma api bem resolvida na vida, maior de  idade, performatica.
 2) bash...bem...bash fofo, legal, divertido, poderoso, mas, nada performatico 
